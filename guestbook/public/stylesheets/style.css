@@ -1,8 +1,45 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* 기본 리셋 및 가독성 개선 */
+* {
+  box-sizing: border-box;
 }
 
+body {
+  padding: 50px;
+  font: 14px/1.6 "Lucida Grande", Helvetica, Arial, sans-serif; /* 줄간격(1.6) 추가 */
+  color: #333333; /* 본문 텍스트 색상 안정화 */
+  background-color: #f9f9f9; /* 연한 배경색 */
+  max-width: 800px; /* 너무 넓어지지 않도록 너비 제한 */
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+/* 링크 스타일 강화 */
 a {
   color: #00B7FF;
+  text-decoration: none; /* 밑줄 제거 */
+  transition: color 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+a:hover {
+  color: #0082b3; /* 마우스 호버 시 조금 더 어두운 파란색 */
+  text-decoration: underline;
+}
+
+/* 자주 쓰이는 기본 요소 스타일링 */
+h1, h2, h3 {
+  color: #111111;
+  margin-top: 0;
+}
+
+button {
+  background-color: #00B7FF;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #0082b3;
 }
