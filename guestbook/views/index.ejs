@@ -1,18 +1,30 @@
 <% include header %>
 <% if (entries.length) { %>
-  <% entries.forEach(function(entry) { %>
+  <!-- forEach에 index를 추가하여 몇 번째 글인지 확인할 수 있게 합니다 -->
+  <% entries.forEach(function(entry, index) { %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <div class="text-muted pull-right">
           <%= entry.published %>
         </div>
-        <%= entry.title %>
+        <!-- 제목 앞에 글 번호를 추가했습니다 -->
+        <strong>#<%= entries.length - index %></strong> <%= entry.title %>
       </div>
       <div class="panel-body">
         <%= entry.body %>
       </div>
+      
+      <!-- 새로 추가한 부분: 카드 하단(Footer)에 관리용 버튼 영역 추가 -->
+      <div class="panel-footer text-right">
+        <a href="#" class="btn btn-sm btn-default">수정</a>
+        <a href="#" class="btn btn-sm btn-danger">삭제</a>
+      </div>
     </div>
   <% }) %>
-<% } else { %>   No entries! <a href="/new-entry">Add one!</a>
+<% } else { %>   
+  <!-- 데이터가 없을 때 표시되는 텍스트를 Bootstrap의 알림 박스 디자인으로 눈에 띄게 개선했습니다 -->
+  <div class="alert alert-info" role="alert">
+    등록된 식단 요청이 없습니다! <a href="/new-entry" class="alert-link">새 식단 요청 작성하기</a>
+  </div>
 <% } %>
 <% include footer %>
